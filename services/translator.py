@@ -8,6 +8,7 @@ class TranslatorService(Translator):
        self.dest = target
        self.translator = Translator() 
 
+
    def translate_string(self):
       translated_result = self.translator.translate(self.text, src=self.src, dest=self.dest)
       
@@ -18,6 +19,7 @@ class TranslatorService(Translator):
          translated_result.text = str(soup)
       
       return translated_result.text  
+
 
    def translate_content_item(content_item, source, target):
       translated_result = {}      

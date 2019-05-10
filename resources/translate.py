@@ -15,6 +15,7 @@ class Translate(Resource):
         help="This field cannot be blank."
     )
 
+
     # post from webhook
     def post(self):
 

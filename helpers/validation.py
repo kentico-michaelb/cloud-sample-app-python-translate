@@ -8,6 +8,7 @@ class ValidationHelper():
             raise Exception("Invalid culture code.") 
         return True
 
+
     def check_valid_length(elements):
         for key, value in elements.items():
             if isinstance(value, str):

@@ -11,13 +11,14 @@ class ItemRepo():
             "Authorization": self.cm_api_key
         }
 
+
     def get_content_item(self, project_id):
-        #KC CM API call: 
         r = requests.get("https://manage.kenticocloud.com/v1/projects/{}/items/codename/{}/variants/codename/{}".format(project_id, self.codename, self.language), headers=self.headers)
 
         if r:
             return r.json()
         
+
     def convert_json_to_dict(self, json_data):
  
         elements = {}
@@ -31,7 +32,6 @@ class ItemRepo():
                 non_translateable_elements[key] = values  
         return elements, non_translateable_elements
 
-        
 
     def import_content_item(self, content_item, project_id, codename, language):
         payload = {"elements": content_item }
