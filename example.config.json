@@ -1,0 +1,19 @@
+{
+    "ENVIRONMENT":"DEFAULT",
+    
+    "ENVIRONMENTS":{
+        "DEFAULT": {
+        "KC_CM_API_KEY": "Bearer ...",
+        "KC_PROJECT_ID": "...",
+        "KC_WEBHOOK_SECRET_KEY": "...",
+        "KC_DEFAULT_LANG":"en",
+        "announcement_limit":3
+        },
+        "PROD": {
+            "KC_CM_API_KEY": "...",
+            "KC_PROJECT_ID": "...",
+            "KC_WEBHOOK_SECRET_KEY": "..."
+         }
+    }
+  }
+
