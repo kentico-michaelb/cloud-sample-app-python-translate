@@ -20,7 +20,7 @@ inflect==2.1.0
 isort==4.3.16
 itsdangerous==1.1.0
 jdcal==1.4
-Jinja2==2.10
+Jinja2==2.10.1
 lazy-object-proxy==1.3.1
 MarkupSafe==1.1.0
 mccabe==0.6.1
@@ -41,7 +41,7 @@ Send2Trash==1.5.0
 six==1.12.0
 typed-ast==1.3.1
 uritemplate==3.0.0
-urllib3==1.24.1
+urllib3==1.24.3
 virtualenv==16.4.0
 Werkzeug==0.14.1
 wrapt==1.11.1
