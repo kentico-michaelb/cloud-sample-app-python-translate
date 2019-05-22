@@ -11,13 +11,11 @@ api = Api(app)
 # Webhook needs to include a lang parameter of the target language; ex: ~/translator/translate?lang=es
 api.add_resource(Translate, "/translator/translate")
 
-default_language = ConfigHelper.get_env_value("KC_DEFAULT_LANG")
-
 # Routes for the frontend
-@app.route("/", defaults={"language": default_language})
+@app.route("/", defaults={"language": "default"})
 
 @app.route("/<language>")
-def index(language):
+def index(language="default"):
     project_id = ConfigHelper.get_env_value("KC_PROJECT_ID")
     limit = ConfigHelper.get_env_value("announcement_limit")
 
@@ -35,4 +33,4 @@ def index(language):
         return render_template("index.html", items=items["items"], languages=languages["items"])
 
 if __name__=="__main__":
-    app.run(port=5080, debug=True)
+    app.run(port=3000, debug=True)
