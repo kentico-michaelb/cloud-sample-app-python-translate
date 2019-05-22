@@ -26,7 +26,8 @@ class ItemRepo():
         non_translateable_elements = {}
 
         for key, values in json_data["elements"].items():
-            if isinstance(values, str):                                
+            # Do not attempt to translate arrays, numbers, or language codes
+            if isinstance(values, str) and key !="translation_code":                         
                 elements[key] = values
             else:                                
                 non_translateable_elements[key] = values  
