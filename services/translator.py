@@ -1,5 +1,6 @@
 from googletrans import Translator
 from bs4 import BeautifulSoup
+from helpers.config import ConfigHelper
 
 class TranslatorService(Translator):
    def __init__(self, text, source, target):              
@@ -22,7 +23,10 @@ class TranslatorService(Translator):
 
 
    def translate_content_item(content_item, source, target):
-      translated_result = {}      
+      translated_result = {}
+      # Handle KC default language as most translation libraries won't recognize "default" as a valid culture code
+      if source == "default":
+         source = ConfigHelper.get_env_value("KC_DEFAULT_LANG")
 
       for key, value in content_item.items():
          text = TranslatorService(value, source, target)
